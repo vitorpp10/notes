@@ -19,7 +19,7 @@ sprintf(buffer, "%s is %d years old and %.1f feet tall");
 *munmap*: para limpar/liberar a área mapeada depois de usada/executada.
 ```
 #include<sys/mman.h>
-void* mmap(NULL, tamanho_bytes, prots, flags, fd, offset);
+char* memory = (char*)mmap(NULL, tamanho_bytes, prots, flags, fd, offset);
 
 ou
 
