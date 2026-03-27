@@ -1,5 +1,3 @@
-# notes
-
 *sprintf*: para escrever um buffer, array/string na memória.
 ```
 #include<stdio>
