@@ -1,32 +1,29 @@
-*sprintf*: para escrever um buffer, array/string na memória.
+*setsid*: faz um processo filho aleatório virar processo principal de um conjunto de processos
 ```
-#include<stdio>
-char* memory
-sprintf(memory, "message");
-
-ou
-
-char buffer[100];
-int number = 1;
-double height = "6.7";
-const char* name = "Vitor";
-sprintf(buffer, "%s is %d years old and %.1f feet tall");
+#include<unistd.h>
+if (setsid() < 0)
+{
+  perror("Error in setsid.\n")
+  exit(EXIT_FAILURE);
+}
+else
+{
+  // código novo aqui;
+}
 ```
 
 ---
 
-*mmap*: mapeia uma área da memória, escolhe o tipo da pasta, privada/púbica, compartilha/única, tamanho em bytes, offset + fd(arquivo).
-*munmap*: para limpar/liberar a área mapeada depois de usada/executada.
+*chdir*: mudar destinatário/caminho do seu arquivo/programa;
 ```
-#include<sys/mman.h>
-char* memory = (char*)mmap(NULL, tamanho_bytes, prots, flags, fd, offset);
-
-ou
-
-char* mp = mmap(NULL, tamanho_bytes, prots, flags, fd, offset);
-if (mp == MAP_FAILED) { perror("Error in mmap.\n); exit(EXIT_FAILURE); }
-munmap(bufffer, tamanho_bytes);
+#include<unistd.h>
+if (chdir(CAMINHO_AQUI))
+{
+  // código novo aqui;
+}
+else { perror("Error in chdir.\n"); exit(EXIT_FAILURE); }
 ```
 
+---
 
-+ 1 count beecrowd
++ 2 count beecrowd
