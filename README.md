@@ -15,6 +15,8 @@ const char* name = "Vitor";
 sprintf(buffer, "%s is %d years old and %.1f feet tall");
 ```
 
+---
+
 *mmap*: mapeia uma área da memória, escolhe o tipo da pasta, privada/púbica, compartilha/única, tamanho em bytes, offset + fd(arquivo).
 *munmap*: para limpar/liberar a área mapeada depois de usada/executada.
 ```
