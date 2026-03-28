@@ -14,7 +14,7 @@ else
 
 ---
 
-*chdir*: mudar destinatário/caminho do seu arquivo/programa;
+*chdir*: mudar destinatário/caminho do seu arquivo/programa
 ```
 #include<unistd.h>
 if (chdir(CAMINHO_AQUI))
@@ -22,6 +22,15 @@ if (chdir(CAMINHO_AQUI))
   // código novo aqui;
 }
 else { perror("Error in chdir.\n"); exit(EXIT_FAILURE); }
+```
+
+---
+
+*mkfifo*: serve para criar um pipe nomeado no seu programa/processo
+```
+#include<sys/stat.h:
+int mk = mkfifo(CAMINHO_AQUI, PERMISSÕES_AQUI);
+if (mk < 0) { perror("Error in mk.\n"); exit(EXIT_FAILURE); }
 ```
 
 ---
