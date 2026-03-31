@@ -17,70 +17,52 @@ O 5W2H é uma ferramenta de gestão. Você pode desenhar isso como uma tabela di
     How Much (Quanto custará?): O custo financeiro é próximo a zero, utilizando ferramentas de código aberto (Open Source), IDEs com licença de estudante (CLion) e bancos de dados gratuitos para a construção do MVP (Produto Mínimo Viável). O custo principal é o tempo de desenvolvimento da equipe.
 ---
 
-1. Árvore de Problemas (Modelo Ishikawa)
+🐟 Parte 1: Árvore de Problemas (Ishikawa Tradicional)
 
-Este diagrama mapeia as causas raízes que geram o problema atual da barbearia.
+Dica visual: Use a cor Vermelha ou Laranja para os contornos deste diagrama, pois representa os pontos de dor.
+🛠️ Guia de Símbolos
+Elemento do Peixe	Símbolo a usar	O que escrever	Posição no Canvas
+Cabeça do Peixe	Retângulo Grande	Desorganização, falhas humanas e perda de tempo no processo manual.	Extrema Direita (Centro)
+Espinha Dorsal	Seta Longa Horizontal	(Linha reta, sem texto)	Do centro-esquerda até a Cabeça
+Categorias	Retângulos Médios	Métodos, Mão de Obra, Ferramentas, Meio Ambiente	Bordas superiores e inferiores
+Espinhas Principais	Setas Diagonais	(Linhas que ligam as Categorias à Espinha Dorsal)	Inclinadas apontando para o centro
+Causas Detalhadas	Texto sem borda ou pequenas setas horizontais	(As causas específicas listadas)	Ligadas nas laterais das setas diagonais
+🗺️ Passo a Passo da Montagem (Problemas)
 
-    Cabeça do Peixe (O Problema Principal / Efeito): Desorganização, falhas humanas e perda de tempo no processo manual de agendamentos.
+    O Efeito: Desenhe um grande Retângulo do lado direito da tela e escreva o problema principal (Desorganização, falhas humanas...).
 
-    Espinhas Superiores (Causas - Categorias 1 e 2):
+    A Espinha Central: Puxe uma seta longa da esquerda da tela até encostar nesse Retângulo.
 
-        Métodos (Processos):
+    As Categorias de Cima: Desenhe dois Retângulos na parte superior da tela. Escreva "Métodos" no primeiro e "Mão de Obra" no segundo. Puxe uma seta diagonal de cada um deles apontando para baixo, até tocar a seta central.
 
-            Agendamento estritamente síncrono (depende de resposta em tempo real).
+    Detalhando Cima: Puxe linhas horizontais saindo da seta diagonal de "Métodos" e escreva: Agendamento estritamente síncrono e Falta de validação lógica. Faça o mesmo na seta de "Mão de Obra" com as respectivas causas.
 
-            Falta de validação lógica (risco de anotar dois clientes no mesmo horário).
+    As Categorias de Baixo: Desenhe dois Retângulos na parte inferior da tela. Escreva "Ferramentas" e "Meio Ambiente". Puxe setas diagonais subindo até tocar a seta central.
 
-        Mão de Obra (Pessoas):
+    Detalhando Baixo: Puxe linhas horizontais das setas de baixo e adicione os textos específicos (Dependência de cadernos físicos..., etc.).
 
-            Acúmulo de funções (o barbeiro atua como prestador de serviço e recepcionista simultaneamente).
+🟢 Parte 2: Árvore de Objetivos (Ishikawa Reverso)
 
-            Cliente sem autonomia para consultar a agenda por conta própria.
+Dica visual: Use a cor Verde ou Azul para este diagrama, indicando solução, metas e um estado futuro positivo.
 
-    Espinhas Inferiores (Causas - Categorias 3 e 4):
+A estrutura geométrica é exatamente a mesma do diagrama anterior, o que muda é a direção psicológica (ao invés de mapear o que deu errado, mapeia o que precisamos fazer para dar certo).
+🛠️ Guia de Símbolos
+Elemento do Peixe	Símbolo a usar	O que escrever	Posição no Canvas
+Cabeça do Peixe	Retângulo Grande	Sistema 100% automatizado, autônomo e zero choques de horário.	Extrema Direita (Centro)
+Espinha Dorsal	Seta Longa Horizontal	(Linha reta, sem texto)	Do centro-esquerda até a Cabeça
+Categorias	Retângulos Médios	Métodos, Mão de Obra, Ferramentas, Meio Ambiente	Bordas superiores e inferiores
+Espinhas Principais	Setas Diagonais	(Linhas que ligam as Categorias à Espinha Dorsal)	Inclinadas apontando para o centro
+Meios de Solução	Texto sem borda ou pequenas setas horizontais	(As soluções técnicas e práticas)	Ligadas nas laterais das setas diagonais
+🗺️ Passo a Passo da Montagem (Objetivos)
 
-        Ferramentas (Tecnologia/Materiais):
+    O Objetivo: Desenhe o grande Retângulo do lado direito e insira o objetivo central (Sistema 100% automatizado...).
 
-            Dependência de cadernos físicos e anotações manuais sujeitas a rasuras.
+    A Espinha Central: Puxe a seta longa horizontal da esquerda para a direita.
 
-            Uso de aplicativo de mensagens pessoal (WhatsApp) para fins corporativos misturados.
+    Categorias de Cima (Soluções): Posicione os blocos "Métodos" e "Mão de Obra" no topo. Puxe as setas diagonais para o centro.
 
-        Meio Ambiente (Contexto do Salão):
+    Detalhando Cima: Nas linhas horizontais anexas à seta de "Métodos", escreva: Autoatendimento assíncrono e Restrições de banco de dados (UNIQUE). Na de "Mão de Obra", coloque a Liberação cognitiva e a Transferência do controle.
 
-            Interrupções constantes do serviço físico para checar o smartphone.
+    Categorias de Baixo (Soluções): Posicione os blocos "Ferramentas" e "Meio Ambiente" na parte inferior. Puxe as setas diagonais para cima em direção ao centro.
 
-            Quebra de foco do profissional durante cortes complexos.
-
-2. Árvore de Objetivos (Modelo Ishikawa Reverso)
-
-A Árvore de Objetivos é a inversão exata da Árvore de Problemas. As causas negativas viram os meios de solução, e o problema principal vira o objetivo central.
-
-    Cabeça do Peixe (O Objetivo Principal / Efeito Desejado): Sistema de agendamento 100% automatizado, autônomo e com integridade de dados (zero choques de horário).
-
-    Espinhas Superiores (Meios de Solução - Categorias 1 e 2):
-
-        Métodos (Processos):
-
-            Implementação de autoatendimento assíncrono (disponível 24/7).
-
-            Garantia de integridade via restrições de banco de dados (Constraint UNIQUE em data e hora).
-
-        Mão de Obra (Pessoas):
-
-            Liberação cognitiva do profissional (foco total na execução do corte).
-
-            Transferência do controle de escolha diretamente para o cliente.
-
-    Espinhas Inferiores (Meios de Solução - Categorias 3 e 4):
-
-        Ferramentas (Tecnologia/Materiais):
-
-            Desenvolvimento de API RESTful em C++ (Drogon) para alta performance.
-
-            Aplicação Web intuitiva e responsiva (Mobile-first).
-
-        Meio Ambiente (Contexto do Salão):
-
-            Rotina de atendimento contínua, sem interrupções por notificações de celular.
-
-            Acompanhamento visual em tempo real através de um painel administrativo.
+    Detalhando Baixo: Preencha os detalhes técnicos: em "Ferramentas", adicione a API RESTful em C++ (Drogon) e a Aplicação Web (Mobile-first). Em "Meio Ambiente", coloque a Rotina contínua sem interrupções e o Painel administrativo em tempo real.
