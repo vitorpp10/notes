@@ -66,3 +66,56 @@ Meios de Solução	Texto sem borda ou pequenas setas horizontais	(As soluções 
     Categorias de Baixo (Soluções): Posicione os blocos "Ferramentas" e "Meio Ambiente" na parte inferior. Puxe as setas diagonais para cima em direção ao centro.
 
     Detalhando Baixo: Preencha os detalhes técnicos: em "Ferramentas", adicione a API RESTful em C++ (Drogon) e a Aplicação Web (Mobile-first). Em "Meio Ambiente", coloque a Rotina contínua sem interrupções e o Painel administrativo em tempo real.
+
+
+---
+
+
+```
+#include<iostream>
+#include<fcntl.h>
+#include<unistd.h>
+#include<sys/types.h>
+#include<sys/mman.h>
+#include<cstdio>
+#include<sys/wait.h>
+#include<sys/stat.h>
+
+int main()
+{
+  const char* filepath = "dados.txt";
+  int fd_abrir = open(filepath, O_RDONLY);
+  if (fd_abrir < 0) { perror("Erro ao abrir arquivo"); exit(EXIT_FAILURE); }
+
+  struct stat sb;
+  if (fstat(fd_abrir, &sb) < 0)
+  {
+    perror("Erro ao obter tamanho do arquivo");
+    close(fd_abrir);
+    exit(EXIT_FAILURE);
+  }
+  size_t file_size = sb.st_size;
+
+  int* addr = (int*)mmap(NULL, file_size, PROT_READ | PROT_WRITE, MAP_ANONYMOUS, fd_abrir, 0);
+  if (addr == MAP_FAILED) { perror("Erro ao executar mmap"); exit(EXIT_FAILURE); }
+
+  read(fd_abrir, addr, sizeof(addr));
+
+  pid_t pid = fork();
+  if (pid < 0) { perror("Erro ao executar fork"); exit(EXIT_FAILURE); }
+
+  if (pid == 0)
+  {
+    execlp("rm", "rm", "dados.txt", NULL);
+  }
+  waitpid(pid, NULL, 0);
+  
+  int fd_criar = open(filepath, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+  if (fd_criar < 0) { perror("Erro ao criar arquivo"); exit(EXIT_FAILURE); }
+  
+  write(fd_criar, addr, sizeof(addr));
+  close(fd_abrir);
+  close(fd_criar);
+  return EXIT_SUCCESS;
+}
+```
