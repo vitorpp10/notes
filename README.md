@@ -7,3 +7,5 @@ MESI Protocol: Protocolo da CPU para garantir a coerência de dados das cores e 
 - `S(Shared)`: Quando o 2 ou mais Cores possuem o mesmo dado e está igual na RAM, podendo ler de forma segura
 
 - `I(Invalid)`: Quando o dado está desatualizado em um Core ou não é possivel ler ele, causando Cache Miss
+
+- aura so bora
